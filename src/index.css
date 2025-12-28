@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* 1. Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* 2. Define Theme (Colors, Fonts, Animations) */
+@theme {
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* Colors - Converted for v4 */
+  --color-background: hsl(0 0% 5%);
+  --color-foreground: hsl(0 0% 98%);
+
+  --color-card: hsl(0 0% 10%);
+  --color-card-foreground: hsl(0 0% 98%);
+
+  --color-popover: hsl(0 0% 8%);
+  --color-popover-foreground: hsl(0 0% 98%);
+
+  --color-primary: hsl(0 0% 75%);
+  --color-primary-foreground: hsl(0 0% 5%);
+
+  --color-secondary: hsl(0 0% 12%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+
+  --color-muted: hsl(0 0% 15%);
+  --color-muted-foreground: hsl(0 0% 60%);
+
+  --color-accent: hsl(0 0% 75%);
+  --color-accent-foreground: hsl(0 0% 5%);
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: hsl(0 0% 18%);
+  --color-input: hsl(0 0% 18%);
+  --color-ring: hsl(0 0% 75%);
+
+  /* Custom Silver Theme Colors */
+  --color-silver: hsl(0 0% 75%);
+  --color-silver-light: hsl(0 0% 85%);
+  --color-cream: hsl(0 0% 98%);
+  --color-charcoal: hsl(0 0% 5%);
+  --color-charcoal-light: hsl(0 0% 12%);
+
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Map Animations to Classes */
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s ease-out forwards;
+  --animate-scale-in: scaleIn 0.5s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+/* 3. Base Styles */
+/* These now work because the variables above are mapped in @theme */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* 4. Utility Classes */
+@layer utilities {
+  .text-gradient-silver {
+    background: linear-gradient(135deg, var(--color-silver), var(--color-silver-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Helper to make standard elements use the border color */
+  .border-border {
+    border-color: var(--color-border);
+  }
+  
+  /* Geometric Pattern Background */
+  .geometric-pattern {
+    background-image: 
+      linear-gradient(30deg, var(--color-border) 12%, transparent 12.5%, transparent 87%, var(--color-border) 87.5%, var(--color-border)),
+      linear-gradient(150deg, var(--color-border) 12%, transparent 12.5%, transparent 87%, var(--color-border) 87.5%, var(--color-border));
+    background-size: 80px 140px;
+    opacity: 0.05;
+  }
+}
