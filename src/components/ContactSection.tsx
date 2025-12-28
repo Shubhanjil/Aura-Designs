@@ -30,7 +30,7 @@ const ContactSection = ({ onOpenForm }: ContactSectionProps) => {
                 bring your architectural and design vision to life.
             </p>
 
-            <Button variant="hero" size="xl" onClick={onOpenForm} className="mb-16">
+            <Button variant="silver" size="xl" onClick={onOpenForm} className="mb-16">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Send Us a Message
             </Button>
