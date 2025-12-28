@@ -2,13 +2,13 @@ import { Award, Users, Home, Clock } from "lucide-react";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import Logo from "./Logo";
 
-const startYear = Number(import.meta.env.VITE_START_YEAR);
-const yearsOfExperience = new Date().getFullYear() - startYear;
+// const startYear = Number(import.meta.env.VITE_START_YEAR);
+// const yearsOfExperience = new Date().getFullYear() - startYear;
 
 const stats = [
     { icon: Home, value: "250+", label: "Projects Completed" },
     { icon: Users, value: "180+", label: "Happy Clients" },
-    { icon: Award, value: `${yearsOfExperience}+`, label: "Years Experience" },
+    { icon: Award, value: "6+", label: "Years Experience" },
     { icon: Clock, value: "100%", label: "On-Time Delivery" },
     ];
 
